@@ -18,3 +18,5 @@ e.g python3 Producer.py client.ini
     1. Make sure `key_serializer` is correct in the function `init_producer_serializer`
     2. Uncomment the key sections of `producer.produce(...)` in the fuction `produce_specific_message`
 3. If you're not using a key for any messages, no changes need to be made 
+
+[^1]:  [Confluent's confluent-kafka-python examples](https://github.com/confluentinc/confluent-kafka-dotnet/tree/master/examples)[^1]
