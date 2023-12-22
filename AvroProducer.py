@@ -30,9 +30,9 @@ def initialize_parser():
     config_parser.read_file(args.config_file)
     config = dict(config_parser['producer'])
     # Change below to what you're connecting to, client.ini is currently set up for:
-    #     CP-Demo: mTLS connection
-    #     Support's CCloud Basic Cluster
-    #     Support's CCloud Standard Cluster
+    #     CP-Demo: mTLS connection : 'cp-demo'
+    #     Support's CCloud Basic Cluster: 'basic'
+    #     Support's CCLoud Standard Cluster: 'standard'
     config.update(config_parser['basic'])
     topic_name = dict(config_parser['topic'])
 
