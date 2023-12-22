@@ -8,6 +8,13 @@ import logging
 import json
 
 
+# Stats callback, add statistics.interval.ms to your client.ini for your client to have this trigger
+def stats_cb(stats_json_str):
+    stats_json = json.loads(stats_json_str)
+    with open("./Producer_stats.log", "w") as f:
+        json.dump(stats_json, f)
+
+
 def initialize_parser():
     # Parse the command line.
     parser = ArgumentParser()
