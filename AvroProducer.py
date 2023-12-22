@@ -13,26 +13,6 @@ import string
 import logging
 
 
-class AvroThing:
-    def __init__(self, ordertime, orderid, itemid, orderunits, city, state, zipcode):
-        self.ordertime = ordertime
-        self.orderid = orderid
-        self.itemid = itemid
-        self.orderunits = orderunits
-        self.address = {
-            "city": city,
-            "state": state,
-            "zipcode": zipcode
-        }
-
-    def AvroThing_to_dict(obj, ctx=None):
-        return dict(ordertime=obj.ordertime,
-                    orderid=obj.orderid,
-                    itemid=obj.itemid,
-                    orderunits=obj.orderunits,
-                    address=obj.address)
-
-
 # Stats callback, add statistics.interval.ms to your client.ini for your client to have this trigger
 def stats_cb(stats_json_str):
     stats_json = json.loads(stats_json_str)
@@ -139,24 +119,7 @@ def console_produce_no_key(avroProducer, avroSerializer, topic):
         avroProducer.poll(0.0)
 
 
-def object_produce(avroProducer, avroSerializer, topic, key_serializer):
-    try:
-        for _ in range(100):
-            thing = AvroThing(random(), random(), choice(string.ascii_letters), random(),
-                              choice(string.ascii_letters), choice(string.ascii_letters), random())
-            avroProducer.produce(topic=topic,
-                                 # key = key_serializer
-                                 value=avroSerializer(thing,
-                                                      SerializationContext(topic,
-                                                                           MessageField.VALUE)),
-                                 on_delivery=delivery_report)
-    except KeyboardInterrupt:
-        exit()
-    except ValueError as e:
-        print("Invalid input, discarding record...")
-        print(e)
-
-
+# Produce a specific message
 def message_produce(avroProducer, avroSerializer, topic, key_serializer):
     # Create your message a dictionary
     message = {"f1": "v1", "f2": "v3"}
