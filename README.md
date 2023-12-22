@@ -2,15 +2,15 @@
 
 # Initial Setup
 1. Fill out client.ini, adding your cluster and client details and setting any necessary configurations
-2. If using CP-Demo, make sure Kafka1, Kafka2, and SchemaRegistry are up
+2. If using [CP-Demo](https://github.com/confluentinc/cp-demo), make sure `Kafka1`, `Kafka2`, and `SchemaRegistry` are up using `docker ps`
 
 # Calling the clients from the terminal
 
 All clients are called with the same syntax:
-    ```python
-    python3 <filename> client.ini
-    e.g python3 Producer.py client.ini
-    ```
+```python
+python3 <filename> client.ini
+e.g python3 Producer.py client.ini
+```
 
 # Producing tips
 
