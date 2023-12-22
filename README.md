@@ -7,8 +7,10 @@
 # Calling the clients from the terminal
 
 All clients are called with the same syntax:
-    '''python3 <filename> client.ini
-       e.g python3 Producer.py client.ini'''
+    '''json
+        python3 <filename> client.ini'''
+        e.g python3 Producer.py client.ini
+    '''
 
 # Producing tips
 
