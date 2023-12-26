@@ -43,7 +43,7 @@ def init_producer_serializer(config, sr_conf, topic):
     schema_str = schema_registry_client.get_latest_version(f"{topic}-value").schema.schema_str
 
     # Look up a schema by full name
-    # schema_str = schema_registry_client.get_latest_version(":.james-context:james-context-value").schema.schema_str
+    # schema_str = schema_registry_client.get_latest_version("<YOUR SUBJECT HERE>").schema.schema_str
 
     # Look up schema by ID
     # schema_str = schema_registry_client.get_schema(<ID>).schema_str
