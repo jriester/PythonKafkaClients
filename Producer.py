@@ -86,9 +86,9 @@ def data_produce(producer, topic):
 def specific_message(producer, topic):
     message = "my_message"
     try:
-
         producer.produce(topic, message,
                          callback=delivery_callback)
+        # Poll for callback
         producer.poll()
     except:
         sys.stderr.write('%% Local producer queue is full (%d messages awaiting delivery): try again\n' %
