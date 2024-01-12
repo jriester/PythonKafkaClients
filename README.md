@@ -12,6 +12,13 @@ python3 <filename> client.ini
 e.g python3 Producer.py client.ini
 ```
 
+# Module not found
+
+If you run into this error, use pip3 to install the missing module
+
+```ModuleNotFoundError: No module named 'confluent_kafka'
+pip3 install confluent_kafka
+```
 # Producing tips
 
 1. If using a key, make sure you fill out the appropriate code regarding your keys
