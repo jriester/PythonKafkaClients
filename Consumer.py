@@ -99,7 +99,7 @@ def consume(consumer, topic):
 if __name__ == '__main__':
     consumer_config, topic = initialize_parser()
     consumer = initialize_consumer(consumer_config, topic)
-    poll(consumer)
-    # consume(consumer)
+    poll(consumer, topic)
+    # consume(consumer, topic)
 
     consumer.close()
