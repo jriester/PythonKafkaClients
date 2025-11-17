@@ -13,6 +13,7 @@ config_parser.read_file(args.config_file)
 sr_config = dict(config_parser['schemaregistry'])
 schema_registry_client = SchemaRegistryClient(sr_config)
 
+# Reads from a local file called "scratch", parses the schema into an Avro object then registers it in the SR
 with open("scratch", 'r') as f:
     schema = f.read()
 
